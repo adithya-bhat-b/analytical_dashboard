@@ -48,7 +48,8 @@
 ### Prerequisites
 1. Create postgres user
 
-```create user postgres_user with encrypted password 'pg123';```
+```create user postgres_user with encrypted password 'pg123';
+```
 
 2. Create postgres dev and prod databases
 
@@ -70,20 +71,20 @@ Go to the project directory
 
 #### Install the dependancies
 
-``` $ python -m pip install -r requirements.txt
+```python -m pip install -r requirements.txt
 ```
 #### Set environment variable(for production deployment)
 ##### For windows
-``` $ set ENV=PROD
+```set ENV=PROD
 ```
 ##### For non windows
-``` $ export ENV=PROD
+```export ENV=PROD
 ```
 #### Run migration
-``` $ python manage.py migrate
+```python manage.py migrate
 ```
 #### Create the server
-``` $ python manage.py runserver 0.0.0.0:{PORT}
+```python manage.py runserver 0.0.0.0:{PORT}
 ```
 
 Note: Set the environment variable for only for production deployment; Default is: `dev`
@@ -92,18 +93,18 @@ Note: Set the environment variable for only for production deployment; Default i
 
 #### Build the image
 ##### PROD
-``` $ docker build -t dashboard --build-arg DB_ENV=prod .
+```docker build -t dashboard --build-arg DB_ENV=prod .
 ```
 ##### DEV
-``` $ docker build -t dashboard .
+```docker build -t dashboard .
 ```
 
 #### Run the image
-``` $ docker run -d dashboard -p {PORT}:8000 -v {LOG_DIR}:/usr/app/src/analytical_dashboard/logs dashboard
+```docker run -d dashboard -p {PORT}:8000 -v {LOG_DIR}:/usr/app/src/analytical_dashboard/logs dashboard
 ```
 
 ### Run tests
-``` $ python manage.py test
+```python manage.py test
 ```
 
 #### Known bugs and Limitations
