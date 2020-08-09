@@ -66,7 +66,7 @@
    ```
    alter user postgres_user CREATEDB;
    grant all privileges on database dashboard to postgres_user;
-   grant all privileges on database dashboard to postgres_user;
+   grant all privileges on database dashboard_prod to postgres_user;
    ```
 
 4. Change the settings.dev and settings.prod database details
